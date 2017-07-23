@@ -1,3 +1,8 @@
+export const VoteActions = {
+  NO : "NO",
+  YES : "YES"
+};
+
 /**
  * To emulate a Redux store, simply
  * support the dispatch(), subscribe() methods and
@@ -35,10 +40,15 @@ export class AppStore {
   /**
    * Use the custom actions to update the counter state!
    *
-   * @TODO - add your custom actions here!
    */
   protected reducer(state, action){
+    console.log("reducing ");
+    console.log(state);
     switch(action) {
+      case VoteActions.YES:
+        return {...state, counter: state.counter + 1};
+      case VoteActions.NO:
+        return {...state, counter: state.counter - 1};
       default : return state;
     }
   }
