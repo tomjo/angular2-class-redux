@@ -1,7 +1,7 @@
 import {Component, Inject} from "@angular/core";
 import {APP_STORE} from "../store/app-store";
-import {Store} from "../store/store";
 import {ApplicationState} from "../store/root-reducer";
+import {Store} from "redux";
 
 @Component({
   selector: 'trm-status',

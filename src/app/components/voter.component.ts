@@ -1,8 +1,8 @@
 import {Component, Inject} from "@angular/core";
 import {APP_STORE} from "../store/app-store";
-import {Store} from "@ngrx/store";
-import {VoteActions} from "../store/votes/vote-actions";
+import {VoteActions, voteYesAction} from "../store/votes/vote-actions";
 import {ApplicationState} from "../store/root-reducer";
+import {Store} from "redux";
 
 @Component({
   selector: 'trm-voter',
@@ -32,7 +32,7 @@ export class VoterComponent {
   constructor(@Inject(APP_STORE) private store: Store<ApplicationState>) { }
 
   private increment() {
-    this.store.dispatch({type: VoteActions.YES});
+    this.store.dispatch(voteYesAction());
   }
 
   private decrement() {
